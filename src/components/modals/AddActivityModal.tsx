@@ -17,8 +17,8 @@ const activitySchema = z.object({
     due_date: z.string(),
     due_time: z.string(),
     description: z.string().optional(),
-    weight: z.string().transform((val) => val ? Number(val) : undefined).optional(),
-    grade: z.string().transform((val) => val ? Number(val) : undefined).optional(),
+    weight: z.string().optional(),
+    grade: z.string().optional(),
 });
 
 type ActivityForm = z.infer<typeof activitySchema>;
@@ -88,8 +88,8 @@ export const AddActivityModal: React.FC<AddActivityModalProps> = ({ isOpen, onCl
                 completed: false,
                 reminder_days: 1,
                 description: data.description,
-                weight: data.weight,
-                grade: data.grade,
+                weight: data.weight ? Number(data.weight) : undefined,
+                grade: data.grade ? Number(data.grade) : undefined,
             });
             reset();
             onClose();
