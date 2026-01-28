@@ -6,7 +6,7 @@ import { useSubjectsStore } from '../../store/subjectsStore';
 import type { Activity } from '../../types/database';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { Trash2, Edit2, CheckCircle, XCircle } from 'lucide-react';
+import { Trash2, CheckCircle, XCircle } from 'lucide-react';
 import { Input } from '../ui/Input';
 
 interface EventDetailsModalProps {

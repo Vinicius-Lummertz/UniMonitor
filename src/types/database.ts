@@ -54,8 +54,8 @@ export interface Activity {
     priority: PriorityLevel;
     due_date: string;
     completed: boolean;
-    grade?: number;
-    weight?: number;
+    grade?: number | null;
+    weight?: number | null;
     reminder_days: number;
     created_at: string;
     updated_at: string;
